@@ -5,6 +5,6 @@ namespace Paco\CustomPacoBundle;
 class PacoNumberGenerator
 {
     public function getNumber(){
-        return 4564;
+        return random_int(0, 100);
     }
 }

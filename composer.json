@@ -67,6 +67,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "Paco\\CustomPacoBundle\\": "lib/CustomPacoBundle/src/",
             "App\\Tests\\": "tests/"
         }
     },
