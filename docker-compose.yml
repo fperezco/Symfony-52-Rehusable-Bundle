@@ -1,0 +1,43 @@
+version: '3'
+services:
+    apache-php:
+        build: .docker/apache-php
+        container_name: bundle_apache_php
+        ports:
+          - 80:80
+        volumes:
+          - ./:/var/www/html
+          - .docker/apache-php/vhost.conf:/etc/apache2/sites-available/000-default.conf
+        working_dir: /var/www/html
+        environment:
+          PHP_EXTENSION_XDEBUG: 1
+          PHP_INI_XDEBUG__REMOTE_PORT: 9000
+          PHP_IDE_CONFIG: "serverName=docker_bundle"
+          XDEBUG_CONFIG: "remote_host=host.docker.internal remote_enable=on"
+#        depends_on:
+#          - mysql
+#          - maildev
+#        links:
+#          - mysql
+
+#    mysql:
+#      build: .docker/db
+#      restart: always
+#            command: mysqld --sql_mode=""
+#      environment:
+#        - MYSQL_DATABASE=pbe
+#        - MYSQL_ROOT_PASSWORD=mysql
+#        - MYSQL_USER=miusuario
+#        - MYSQL_PASSWORD=mipassword
+#      volumes:
+#        - .docker/db/data/mysql:/var/lib/mysql
+#      expose:
+#        - 3306
+#      ports:
+#        - 3306:3306
+
+#    maildev:
+#        image: djfarrelly/maildev
+#        container_name: pbegit_maildev
+#        ports:
+#          - 8001:80
