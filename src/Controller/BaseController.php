@@ -15,8 +15,6 @@ class BaseController extends AbstractController
     public function index(PacoNumberGenerator $pacoNumberGenerator): Response
     {
         $number = $pacoNumberGenerator->getNumber();
-
-
         return new Response(
             '<html><body>Lucky number: '.$number.'</body></html>'
         );

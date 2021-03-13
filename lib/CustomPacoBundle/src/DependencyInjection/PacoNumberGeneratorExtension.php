@@ -14,6 +14,7 @@ class PacoNumberGeneratorExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
+        var_dump($configs);die;
         // TODO: Implement load() method.
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yaml');
