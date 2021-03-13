@@ -1,0 +1,1 @@
+Proof of concept about rehusable bundles in Symfony
