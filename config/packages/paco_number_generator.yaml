@@ -1,2 +1,3 @@
 paco_number_generator:
-    bar: true
+    basenumber: 200
+    topnumber: 205

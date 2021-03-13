@@ -14,7 +14,7 @@ class PacoNumberGeneratorExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
-        var_dump($configs);die;
+        //var_dump($configs);die;
         // TODO: Implement load() method.
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yaml');
@@ -22,5 +22,12 @@ class PacoNumberGeneratorExtension extends Extension
         //$loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         //$loader->load('services.xml');
 
+        //we pass the argument from the config/packages/paco_number_generator.yml to the class
+        $configuration = $this->getConfiguration($configs, $container);
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $definition = $container->getDefinition('custom_paco_bundle.paco_number_generator');
+        $definition->setArgument(0, $config['basenumber']);
+        $definition->setArgument(1, $config['topnumber']);
     }
 }
