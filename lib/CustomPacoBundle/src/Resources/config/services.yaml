@@ -11,11 +11,14 @@ services:
 #    resource: '../../../src/*'
 #    exclude: '../../../src/{DependencyInjection,Entity,Tests,Kernel.php}'
 
-  # ...
+
+  custom_paco_bundle.meeting_message_provider:
+    class: Paco\CustomPacoBundle\MeetingMessageProvider
 
   # the id is not a class, so it won't be used for autowiring
   custom_paco_bundle.paco_number_generator:
     class: Paco\CustomPacoBundle\PacoNumberGenerator
+    arguments: ['@custom_paco_bundle.meeting_message_provider']
     public: true
 
   # but this fixes it!

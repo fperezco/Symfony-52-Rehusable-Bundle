@@ -27,7 +27,14 @@ class PacoNumberGeneratorExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $definition = $container->getDefinition('custom_paco_bundle.paco_number_generator');
-        $definition->setArgument(0, $config['basenumber']);
-        $definition->setArgument(1, $config['topnumber']);
+        //$definition->setArgument(0, $config['basenumber']);
+        //$definition->setArgument(1, $config['topnumber']);
+
+        if (null !== $config['meeting_message_provider']) {
+            $definition->setArgument(0, $config['meeting_messsage_provider']);
+        }
+
+        $definition->setArgument(1, $config['basenumber']);
+        $definition->setArgument(2, $config['topnumber']);
     }
 }

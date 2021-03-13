@@ -18,6 +18,7 @@ class Configuration implements ConfigurationInterface
              //->booleanNode('unicorns_are_real')->defaultTrue()->end()
              ->integerNode('basenumber')->defaultValue(3)->end()
              ->integerNode('topnumber')->defaultValue(3)->end()
+             ->scalarNode('meeting_message_provider')->defaultNull()->end()
              ->end()
          ;
          return $treeBuilder;
