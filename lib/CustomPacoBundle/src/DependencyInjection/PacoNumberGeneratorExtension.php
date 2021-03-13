@@ -9,6 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\DependencyInjection\Reference;
 
 class PacoNumberGeneratorExtension extends Extension
 {
@@ -31,7 +32,8 @@ class PacoNumberGeneratorExtension extends Extension
         //$definition->setArgument(1, $config['topnumber']);
 
         if (null !== $config['meeting_message_provider']) {
-            $definition->setArgument(0, $config['meeting_messsage_provider']);
+            //$definition->setArgument(0, $config['meeting_message_provider']);
+            $definition->setArgument(0, new Reference($config['meeting_message_provider']));
         }
 
         $definition->setArgument(1, $config['basenumber']);
