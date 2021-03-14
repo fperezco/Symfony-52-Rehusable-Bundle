@@ -14,6 +14,7 @@ services:
 
   custom_paco_bundle.meeting_message_provider:
     class: Paco\CustomPacoBundle\MeetingMessageProvider
+    public: true
 
   # the id is not a class, so it won't be used for autowiring
   custom_paco_bundle.paco_number_generator:
@@ -25,3 +26,6 @@ services:
   # the ``app.rot13.transformer`` service will be injected when
   # an ``App\Util\Rot13Transformer`` type-hint is detected
   Paco\CustomPacoBundle\PacoNumberGenerator: '@custom_paco_bundle.paco_number_generator'
+
+
+  Paco\CustomPacoBundle\MeetingMessageProvider: '@custom_paco_bundle.meeting_message_provider'

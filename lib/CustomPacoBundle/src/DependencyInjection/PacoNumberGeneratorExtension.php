@@ -33,7 +33,8 @@ class PacoNumberGeneratorExtension extends Extension
 
         if (null !== $config['meeting_message_provider']) {
             //$definition->setArgument(0, $config['meeting_message_provider']);
-            $definition->setArgument(0, new Reference($config['meeting_message_provider']));
+            //$definition->setArgument(0, new Reference($config['meeting_message_provider']));
+            $container->setAlias('custom_paco_bundle.meeting_message_provider', $config['meeting_message_provider']);
         }
 
         $definition->setArgument(1, $config['basenumber']);
