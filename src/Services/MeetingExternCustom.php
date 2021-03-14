@@ -4,9 +4,10 @@
 namespace App\Services;
 
 
+use Paco\CustomPacoBundle\Interfaces\MeetingMessageProviderInterface;
 use Paco\CustomPacoBundle\MeetingMessageProvider;
 
-class MeetingExternCustom extends MeetingMessageProvider
+class MeetingExternCustom implements MeetingMessageProviderInterface
 {
     public function getWordList(): array
     {

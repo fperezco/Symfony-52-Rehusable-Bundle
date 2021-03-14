@@ -2,13 +2,15 @@
 
 namespace Paco\CustomPacoBundle;
 
+use Paco\CustomPacoBundle\Interfaces\MeetingMessageProviderInterface;
+
 class PacoNumberGenerator
 {
     private $baseNumber;
     private $topNumber;
     private $meetingMessageProvider;
 
-    public function __construct(MeetingMessageProvider $meetingMessageProvider, $baseNumber = 0, $topNumber = 100)
+    public function __construct(MeetingMessageProviderInterface $meetingMessageProvider, $baseNumber = 0, $topNumber = 100)
     {
         $this->baseNumber = $baseNumber;
         $this->topNumber = $topNumber;

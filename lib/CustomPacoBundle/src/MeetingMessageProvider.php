@@ -4,7 +4,9 @@
 namespace Paco\CustomPacoBundle;
 
 
-class MeetingMessageProvider
+use Paco\CustomPacoBundle\Interfaces\MeetingMessageProviderInterface;
+
+class MeetingMessageProvider implements MeetingMessageProviderInterface
 {
     public function getWordList(): array
     {

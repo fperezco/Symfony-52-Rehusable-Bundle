@@ -2,7 +2,7 @@
 
 namespace Paco\CustomPacoBundle\Interfaces;
 
-interface MeetingMessageInterface
+interface MeetingMessageProviderInterface
 {
     /**
      * Return an array of words to use for the fake text.
