@@ -47,6 +47,9 @@ RUN apt-get -y install libfontconfig libfreetype6 libfreetype6-dev libfontconfig
 RUN echo 'max_execution_time = 300' >> /usr/local/etc/php/conf.d/docker-php-maxexectime.ini
 RUN echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
 
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 ##############################################################################
 # Install support for sendmail. SendMail is used by php native "mail" command
 ##############################################################################

@@ -99,6 +99,9 @@
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
+    "paco/custom-paco-bundle": {
+        "version": "dev-master"
+    },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
     },

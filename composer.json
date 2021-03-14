@@ -12,6 +12,7 @@
         "doctrine/doctrine-bundle": "^2.2",
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.8",
+        "paco/custom-paco-bundle": "*@dev",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/apache-pack": "^1.0",
@@ -96,5 +97,11 @@
             "allow-contrib": false,
             "require": "5.2.*"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/tmp/dir/CustomPacoBundle"
+        }
+    ]
 }
