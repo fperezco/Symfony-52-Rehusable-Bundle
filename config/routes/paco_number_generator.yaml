@@ -1,0 +1,4 @@
+_number_generator:
+  #resource: '@KnpULoremIpsumBundle/Resources/config/routes.xml'
+  resource: '@PacoNumberGeneratorBundle/Resources/config/routes.yml'
+  prefix: /api/numbergenerator
