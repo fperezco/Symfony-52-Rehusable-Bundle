@@ -1,4 +1,5 @@
 paco_number_generator:
     basenumber: 200
     topnumber: 205
-    meeting_message_provider: App\Services\MeetingExternCustom
+    #config previous when does not use tags
+    #meeting_message_provider: App\Services\MeetingExternCustom
